@@ -1,4 +1,4 @@
-const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
+﻿const CATEGORIES_URL = "https://japdevdep.github.io/ecommerce-api/category/all.json";
 const PUBLISH_PRODUCT_URL = "https://japdevdep.github.io/ecommerce-api/product/publish.json";
 const CATEGORY_INFO_URL = "https://japdevdep.github.io/ecommerce-api/category/1234.json";
 const PRODUCTS_URL = "https://japdevdep.github.io/ecommerce-api/product/all.json";
@@ -44,4 +44,18 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
+let usuariologgeado = localStorage.getItem('Usuario-Loggeado');
+    let usuario = document.getElementById('usuario');
+
+    if(usuariologgeado){
+        usuariologgeado = JSON.parse(usuariologgeado);
+        usuario.innerText = usuario.innerText + 'Usuario: ' + usuariologgeado.email;
+    }
+
+    if(document.getElementById("salir")){
+        document.getElementById("salir").addEventListener("click", function(){
+            localStorage.removeItem('Usuario-Loggeado');
+            
+        })
+    }
 });
