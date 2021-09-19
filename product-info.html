@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
 
@@ -26,13 +26,26 @@
       <p class="py-2 d-none d-md-inline-block" style="color: white;" id="usuario"> </p>
     </div>
   </nav>
+
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <div id="prod-info-container"></div>
+    <div class="list-group-item">
+      <h2>Comentarios:</h2>
+      <div id="prod-comment-container"></div>
     </div>
+    <br>
+    <div class="div">
+      <h2 class="titulo">¿Qué opinas de este auto?</h2>
+      <textarea name="comentario" id="comentario" cols="50" rows="10" placeholder="¡Cuentanos aquí!"></textarea> <br><br>
+      <div>
+        <p style="display: inline-block;">Calificar:</p>
+        <div style="display: inline-block;" id="estrella"></div>
+      </div>
+      <br><br>
+      <input type="submit" id="enviar"></button>
+      <br><br>
+    </div>
+
   </div>
   <footer class="text-muted">
     <div class="container">
@@ -55,6 +68,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+  <link rel="stylesheet" href="css/estrellas.css">
 </body>
 
 </html>
