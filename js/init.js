@@ -46,7 +46,6 @@ var getJSONData = function(url){
 document.addEventListener("DOMContentLoaded", function(e){
 let usuariologgeado = localStorage.getItem('Usuario-Loggeado');
     let usuario = document.getElementById('usuario');
-
     if(usuariologgeado){
         usuariologgeado = JSON.parse(usuariologgeado);
         usuario.innerText = usuario.innerText + 'Usuario: ' + usuariologgeado.email;
