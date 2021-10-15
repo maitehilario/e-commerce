@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
 
@@ -34,16 +34,16 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
+  <nav class="site-header sticky-top py-2 bg-dark">
     <div class="container d-flex flex-column flex-md-row justify-content-between">
       <a class="py-2 d-none d-md-inline-block" href="inicio.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>      
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false">
-          <p class="align-middle d-none d-md-inline-block" style="color: white;" id="usuario"> </p>
+          <div class="d-none d-md-inline-block" style="color: white;" id="usuario"> </div>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="cart.html">Mi carrito</a>
@@ -53,14 +53,54 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+ 
+  <div class="container  p-5">
+    <div class="text-center p-4">
+      <h2>Carrito de compras</h2>
+      <p class="lead">Verás aquí todos los productos seleccionados</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-sm-12 col-lg-5" id="cartProd"></div>
+      <div class="pt-2 col-md-6 col-sm-12 col-lg-7 border rounded">
+
+        <div class="">
+          <p class="" class="" id=""> Costo total: </p>
+          
+        </div>
+        <form action="">
+          <div class="row">
+
+            <p style="width: fit-content;" class="px-2">Método de envío: </p>
+
+            <input required id="Standard" name="envio" type="radio">
+            <label class="pr-3" for="Standard">Standard</label>
+            <input id="Express" name="envio" type="radio">
+            <label class="pr-3" for="Express">Express</label>
+            <input class="pr-3" id="Premium" name="envio" type="radio">
+            <label for="Premium">Premium</label>
+
+          </div>
+          
+          <div class="row">
+
+            <p class="px-2">Forma de pago:</p>
+
+            <input required id="transferencia" name="pago" type="radio">
+            <label class="pr-3" for="transferencia">Transferencia bancaria</label>
+            <input id="credito" name="pago" type="radio">
+            <label class="pr-3" for="credito">Tarjeta de crédito</label>
+
+          </div>
+          <button type="submit" class="btn btn-secondary">Comprar</button>
+
+        </form>
+      </div> 
+
+
     </div>
   </div>
+  </div>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
