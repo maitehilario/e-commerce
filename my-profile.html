@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
 <html lang="en">
 
@@ -53,19 +53,45 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+    <div class="text-center p-3">
+    <h2>Mi perfil</h2>
+    <p class="lead">Verás aquí tus datos guardados.</p>
+  </div>
+  <div class="container p-2">
+    <div class="list-group-item">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Nombre y apellido</span>
+        </div>
+        <input id="nombre" type="text" aria-label="First name" value="" class="form-control">
+        <input id="apellido" type="text" aria-label="Last name" class="form-control">
+      </div>
+      <br>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Edad</span>
+        </div>
+        <input id="edad" type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default">
+
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">E-mail</span>
+        </div>
+        <input id="email" type="email" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default">
+
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Teléfono</span>
+        </div>
+        <input id="tel" type="number" class="form-control" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default">
+      </div>
+      <div class="input-group">
+        <button id="guardar" type="button" class="btn btn-outline-dark">Guardar</button>
+      </div>
     </div>
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
   </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">
     <span id="resultSpan"></span>
