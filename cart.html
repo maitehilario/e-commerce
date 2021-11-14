@@ -52,51 +52,152 @@
         </div>
       </div>
     </div>
-  </nav>
- 
+  </nav> 
+
   <div class="container  p-5">
     <div class="text-center p-4">
       <h2>Carrito de compras</h2>
       <p class="lead">Verás aquí todos los productos seleccionados</p>
     </div>
-    <div class="row justify-content-center">
+    <div class="row">
       <div class="col-md-6 col-sm-12 col-lg-5" id="cartProd"></div>
-      <div class="pt-2 col-md-6 col-sm-12 col-lg-7 border rounded">
+    </div>
 
-        <div class="">
-          <p class="" class="" id=""> Costo total: </p>
+    <div class="pt-2 col-md-6 col-sm-12 col-lg-7 border rounded">
+      <form onchange="calcEnvio()" id="form" name="fenvio" action="">
           
-        </div>
-        <form action="">
+        <h4 class="">Método de envío: </h4>
+        <div class="p-2">
           <div class="row">
-
-            <p style="width: fit-content;" class="px-2">Método de envío: </p>
-
             <input required id="Standard" name="envio" type="radio">
-            <label class="pr-3" for="Standard">Standard</label>
-            <input id="Express" name="envio" type="radio">
-            <label class="pr-3" for="Express">Express</label>
-            <input class="pr-3" id="Premium" name="envio" type="radio">
-            <label for="Premium">Premium</label>
-
+            <label class="pr-3" for="Standard"> <b> Standard: </b> 12 a 15 días (5%) </label>
           </div>
-          
           <div class="row">
-
-            <p class="px-2">Forma de pago:</p>
-
-            <input required id="transferencia" name="pago" type="radio">
-            <label class="pr-3" for="transferencia">Transferencia bancaria</label>
-            <input id="credito" name="pago" type="radio">
-            <label class="pr-3" for="credito">Tarjeta de crédito</label>
-
+            <input id="Express" name="envio" type="radio">
+            <label class="pr-3" for="Express"> <b> Express: </b> 5 a 8 días (7%) </label>
           </div>
-          <button type="submit" class="btn btn-secondary">Comprar</button>
+          <div class="row">
+            <input class="pr-3" id="Premium" name="envio" type="radio">
+            <label for="Premium"> <b> Premium: </b> 2 a 5 días (15%)</label>
+          </div> 
+        </div> 
 
-        </form>
-      </div> 
+        <hr>
+        <div class="">
+          <h4>Costos</h4>
+          <p>Subtotal: <span id="subtot"></span> </p>
+          <p> Costo de envío: <span id="costenvio"></span> </p>
+          <p class="" class=""> Costo total: <span id="total"></span> </p>
+
+        </div>
+        <hr>
+        <div>
+          <h4>Dirección de envío</h4>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="inputGroupSelect01">País</label>
+            </div>
+            <select required class="custom-select" id="inputGroupSelect01">
+              <option value="">Elegir...</option>
+              <option value="1">Uruguay</option>
+              <option value="2">Argentina</option>
+              <option value="3">Brasil</option>
+              <option value="4">Chile</option>
+              <option value="5">Paraguay</option>
+              <option value="6">Otro</option>
+            </select>
+          </div>
+          <div class="row">
+            <div class="col input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Calle</span>
+              </div>
+              <input required type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <div class="col input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Número de puerta</span>
+              </div>
+              <input required type="number" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+            </div>
+          </div>
+
+        </div> 
+        <hr>
+        <div class="">
+          <h4>Forma de pago</h4>
+          <button type="button" class="link" data-toggle="modal" data-target="#exampleModal">
+            Seleccionar
+          </button>
+        </div>
 
 
+        <br>
+        <button id="comprar" type="submit" class="btn btn-secondary">Comprar</button>
+
+      </form>
+      <br>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Forma de pago</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+            <div class="row">
+                
+              <input class="mediopago" id="transferencia" name="pago" type="radio">
+              <label class="pr-3" for="transferencia">Transferencia bancaria</label>
+            </div>
+            <div class="row col input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Número de cuenta</span>
+              </div>
+              <input id="nrocuenta" type="text" class="form-control" aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-sm">
+            </div>
+            <hr>
+            <div class="row">
+              <input class="mediopago" id="credito" name="pago" type="radio">
+              <label class="pr-3" for="credito">Tarjeta de crédito</label>
+            </div>
+            <div class="row">
+              <div class="col-8 input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Número de tarjeta</span>
+                </div>
+                <input id="nrotarj" type="text" class="form-control" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="col input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">CSV</span>
+                </div>
+                <input id="csv" type="text" class="form-control" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm">
+              </div>
+              <div class="col input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroup-sizing-sm">Vencimiento (MM/AA)</span>
+                </div>
+                <input id="venc" type="text" class="form-control" aria-label="Sizing example input"
+                  aria-describedby="inputGroup-sizing-sm">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-secondary" data-dismiss="modal">Guardar</button>           
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   </div>
